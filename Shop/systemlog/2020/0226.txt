@@ -1,0 +1,38 @@
+﻿time:2020/2/26 11:26:46
+url:
+refererurl:
+content:System.Data.SqlClient.SqlException (0x80131904): 已成功与服务器建立连接，但是在登录过程中发生错误。 (provider: Shared Memory Provider, error: 0 - 管道的另一端上无任何进程。) ---> System.ComponentModel.Win32Exception (0x80004005): 管道的另一端上无任何进程。
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 LB.DataAccess.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters) 位置 D:\LebiShop\LB.DataAccess\Base\SQLHelper.cs:行号 889
+   在 LB.DataAccess.SqlUtils.TextExecuteReader(String commandText, SqlParameter[] commandParameters) 位置 D:\LebiShop\LB.DataAccess\Base\SqlUtils.cs:行号 145
+   在 DB.LebiShop.D_Lebi_Config.GetList(String strWhere, String strFieldOrder, Int32 seconds) 位置 D:\LebiShop\DB.shop\DAL\D_Lebi_Config.cs:行号 469
+   在 DB.LebiShop.B_Lebi_Config.GetList(String strWhere, String strFieldOrder, Int32 seconds) 位置 D:\LebiShop\DB.shop\Bussiness\B_Lebi_Config.cs:行号 123
+   在 Shop.Bussiness.B_BaseConfig.LoadConfig() 位置 D:\LebiShop\Shop.Bussiness\B_BaseConfig.cs:行号 33
+   在 Shop.Bussiness.ShopCache.GetBaseConfig() 位置 D:\LebiShop\Shop.Bussiness\ShopCache.cs:行号 31
+   在 Shop.Bussiness.TimeWork..ctor() 位置 D:\LebiShop\Shop.Bussiness\TimeWork.cs:行号 53
+   在 Shop.Global.Application_Start(Object sender, EventArgs e) 位置 D:\LebiShop\Shop\Global.asax.cs:行号 19
+ClientConnectionId:42cbeaff-d239-4f50-97c9-eddeb13e3cae
+Error Number:233,State:0,Class:20
+
+time:2020/2/26 13:59:05
+url:
+refererurl:
+content:Post异常：地址http://www.lebi.cn/api/api.aspx?__Action=UserLastUse&username=&pwd=&domain=&code=b44182379bf9fae976e6ae5996e13cd8&Version=6&Version_Son=1.35&
+ Data:
+System.Net.WebException: 未能解析此远程名称: 'www.lebi.cn'
+   在 System.Net.WebClient.UploadValues(Uri address, String method, NameValueCollection data)
+   在 System.Net.WebClient.UploadValues(String address, String method, NameValueCollection data)
+   在 LB.Tools.HtmlEngine.Post(String WebUrl, NameValueCollection nv, String& status) 位置 D:\LebiShop\LB.Tools\HtmlEngine.cs:行号 395
+
