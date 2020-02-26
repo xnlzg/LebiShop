@@ -24,6 +24,7 @@ namespace Shop.Bussiness
         private string _WebPath = "";
         private string _SupplierPath = "";
         private string _ThemeDomain = "";
+        private string _gatherUrl = "";
         private int _SiteCount = 2;//用户的站点数量
         #region 静态实例
         private static Site _Instance;
@@ -58,6 +59,8 @@ namespace Shop.Bussiness
             }
             _WebPath = RequestTool.GetConfigKey("WebPath");
             _SupplierPath = RequestTool.GetConfigKey("SupplierPath");
+
+            _gatherUrl = RequestTool.GetConfigKey("GatherUrl");
             _WebPath = _WebPath.TrimEnd('/');
             string SystemAdminPath = _WebPath + "/theme/system/systempage/admin";
             if (!string.IsNullOrEmpty(RequestTool.GetConfigKey("SystemAdmin").Trim()))
@@ -175,6 +178,11 @@ namespace Shop.Bussiness
         public string ThemeDomain
         {
             get { return _ThemeDomain; }
+        }
+
+        public string GatherUrl
+        {
+            get { return _gatherUrl; }
         }
         /// <summary>
         ///  多站点选择
@@ -390,6 +398,8 @@ namespace Shop.Bussiness
             //set { _adminassetspath = value; }
             get { return _adminassetspath; }
         }
+
+
     }
 }
 

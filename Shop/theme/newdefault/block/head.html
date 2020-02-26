@@ -8,12 +8,13 @@
                 <li><a href="https://plus.google.com/u/0/107335425411617972609/posts/p/pub" class="google" target="_blank"></a></li>
                 <li><a href="https://twitter.com/crw_bathrooms" class="twitter" target="_blank"></a></li>
                 <li><a href="https://www.facebook.com/profile.php?id=100009518509235&pnref=story" class="facebook" target="_blank"></a></li>
-                <span class="userstatus" id="userstatus"><a href="<%=URL("P_Register", "") %>"><%=Tag("免费注册")%></a> ┊ <a href="<%=URL("P_Login", "") %>"><%=Tag("登录")%></a></span>
+                <span class="userstatus" id="userstatus"><a href="<%=URL(" P_Register", "" ) %>"><%=Tag("免费注册")%></a> ┊ <a href="<%=URL(" P_Login", "" ) %>"><%=Tag("登录")%></a> </a></span>
             </ul>
             <ul>
                 <li>{MOD:ShoppingCartLine}</li>
                 <li>{MOD:LanguageLine}</li>
                 <li>{MOD:CurrencyLine}</li>
+                <li><a href="<%=site.GatherUrl%>"><%=Tag("集运系统")%></a></li>
             </ul>
         </div>
     </div>
@@ -25,10 +26,11 @@
             {MOD:SearchFormLine}
             {MOD:SearchKeywordLine}
         </div>
-        <div class="toplink">
+        <div class="toplink"> 
             <a href="<%=URL("P_UserCenter","") %>">
-                <img src="{image}topIco1.png">{tag:我的账号}</a> <a href="<%=URL("P_Basket","") %>">
-                    <img src="{image}topIco2.png">{tag:购物车}</a>
+                <img src="{image}topIco1.png">{tag:我的账号}</a>
+            <a href="<%=URL("P_Basket","") %>">
+                <img src="{image}topIco2.png">{tag:购物车}</a>
         </div>
     </div>
 </div>

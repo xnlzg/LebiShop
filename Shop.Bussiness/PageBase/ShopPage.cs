@@ -39,8 +39,10 @@ namespace Shop.Bussiness
         protected Shop.Model.ServicePanel servicepannel;
         protected Shop.Model.ServicePanel supplierservicepannel;
         protected static List<Lebi_Currency> Currencys = new List<Lebi_Currency>();
+        protected Site site;
         public ShopPage()
         {
+            site = new Site();
             pageindex = RequestTool.RequestInt("pageindex", 0);
             string servicepannelcon = SYS.ServicePanel;
             servicepannel = B_ServicePanel.GetModel(servicepannelcon);

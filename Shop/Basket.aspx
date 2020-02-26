@@ -93,7 +93,7 @@
                 <li><a href="https://plus.google.com/u/0/107335425411617972609/posts/p/pub" class="google" target="_blank"></a></li>
                 <li><a href="https://twitter.com/crw_bathrooms" class="twitter" target="_blank"></a></li>
                 <li><a href="https://www.facebook.com/profile.php?id=100009518509235&pnref=story" class="facebook" target="_blank"></a></li>
-                <span class="userstatus" id="userstatus"><a href="<%=URL("P_Register", "") %>"><%=Tag("免费注册")%></a> ┊ <a href="<%=URL("P_Login", "") %>"><%=Tag("登录")%></a></span>
+                <span class="userstatus" id="userstatus"><a href="<%=URL(" P_Register", "" ) %>"><%=Tag("免费注册")%></a> ┊ <a href="<%=URL(" P_Login", "" ) %>"><%=Tag("登录")%></a> </a></span>
             </ul>
             <ul>
                 <li>
@@ -108,11 +108,11 @@
     <ul class="droplanguage">
         <li class="language_li"><a class="noclick"><span>网站语言：</span><s><%if (CurrentLanguage.ImageUrl!=""){%><img src="<%=Image(CurrentLanguage.ImageUrl) %>" /><%}%><%=CurrentLanguage.Name %></s></a><dl
             class="language_li_content">
-            <%List<DB.LebiShop.Lebi_Language> fqixs=Languages();RecordCount=fqixs.Count;int fqix_index=1;
-foreach (DB.LebiShop.Lebi_Language fqix in fqixs){%>
-            <dd <%if (fqix_index==RecordCount){%>class="last" <%} %>>
-                <a href="javascript:SetLanguage(<%=fqix.id%>,'<%=fqix.Code%>','<%=fqix.Path%>');"><%if (fqix.ImageUrl!=""){%><img src="<%=Image(fqix.ImageUrl) %>" /><%}%><%=fqix.Name%></a></dd>
-            <%fqix_index++;}%>
+            <%List<DB.LebiShop.Lebi_Language> HCFCs=Languages();RecordCount=HCFCs.Count;int HCFC_index=1;
+foreach (DB.LebiShop.Lebi_Language HCFC in HCFCs){%>
+            <dd <%if (HCFC_index==RecordCount){%>class="last" <%} %>>
+                <a href="javascript:SetLanguage(<%=HCFC.id%>,'<%=HCFC.Code%>','<%=HCFC.Path%>');"><%if (HCFC.ImageUrl!=""){%><img src="<%=Image(HCFC.ImageUrl) %>" /><%}%><%=HCFC.Name%></a></dd>
+            <%HCFC_index++;}%>
         </dl>
         </li>
     </ul>
@@ -125,11 +125,11 @@ foreach (DB.LebiShop.Lebi_Language fqix in fqixs){%>
     <ul class="dropcurrency">
         <li class="currency_li"><a class="noclick"><span>币种：</span><s><%=CurrentCurrency.Code %></s></a><dl
             class="currency_li_content">
-            <%Table="Lebi_Currency";Where="";Order="Sort desc";PageSize=20;pageindex=Rint("page");RecordCount=B_Lebi_Currency.Counts(Where);int kgtR_index=1;
-List<Lebi_Currency> kgtRs = B_Lebi_Currency.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Currency kgtR in kgtRs){%>
-            <dd <%if (kgtR_index==RecordCount){%>class="last" <%} %>>
-                <a href="javascript:SetCurrency(<%=kgtR.id%>,'<%=kgtR.Code%>',<%=kgtR.ExchangeRate%>,'<%=kgtR.Msige%>','<%=kgtR.DecimalLength%>');"><%=kgtR.Code%></a></dd>
-            <%kgtR_index++;}%>
+            <%Table="Lebi_Currency";Where="";Order="Sort desc";PageSize=20;pageindex=Rint("page");RecordCount=B_Lebi_Currency.Counts(Where);int HXul_index=1;
+List<Lebi_Currency> HXuls = B_Lebi_Currency.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Currency HXul in HXuls){%>
+            <dd <%if (HXul_index==RecordCount){%>class="last" <%} %>>
+                <a href="javascript:SetCurrency(<%=HXul.id%>,'<%=HXul.Code%>',<%=HXul.ExchangeRate%>,'<%=HXul.Msige%>','<%=HXul.DecimalLength%>');"><%=HXul.Code%></a></dd>
+            <%HXul_index++;}%>
         </dl>
         </li>
     </ul>
@@ -137,6 +137,7 @@ List<Lebi_Currency> kgtRs = B_Lebi_Currency.GetList(Where, Order,PageSize ,pagei
 <%} %>
 
 </li>
+                <li><a href="<%=site.GatherUrl%>"><%=Tag("集运系统")%></a></li>
             </ul>
         </div>
     </div>
@@ -152,8 +153,8 @@ List<Lebi_Currency> kgtRs = B_Lebi_Currency.GetList(Where, Order,PageSize ,pagei
 
 <script type="text/javascript">
     $(function () {
-        blurInput('#keyword', '<%if (Rstring("Keyword")!=""){ %><%=Rstring("Keyword")%><%}else{%><%Table="Lebi_Searchkey";Where="Type=1";Order="Sort desc,id desc";PageSize=1;pageindex=1;RecordCount=B_Lebi_Searchkey.Counts(Where);int yJQv_index=1;
-List<Lebi_Searchkey> yJQvs = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Searchkey yJQv in yJQvs){%><%=Lang(yJQv.Name)%><%yJQv_index++;}%><%} %>');
+        blurInput('#keyword', '<%if (Rstring("Keyword")!=""){ %><%=Rstring("Keyword")%><%}else{%><%Table="Lebi_Searchkey";Where="Type=1";Order="Sort desc,id desc";PageSize=1;pageindex=1;RecordCount=B_Lebi_Searchkey.Counts(Where);int TdqE_index=1;
+List<Lebi_Searchkey> TdqEs = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Searchkey TdqE in TdqEs){%><%=Lang(TdqE.Name)%><%TdqE_index++;}%><%} %>');
         $(".searchform .button").click(function(){
             var typename = $('#searchtype').attr('typename');
             var url = "";
@@ -199,17 +200,18 @@ List<Lebi_Searchkey> yJQvs = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pag
             
 
 <div class="searchkeyword">
-<%Table="Lebi_Searchkey";Where="";Order="Sort desc,id desc";PageSize=5;pageindex=1;RecordCount=B_Lebi_Searchkey.Counts(Where);int ytHz_index=1;
-List<Lebi_Searchkey> ytHzs = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Searchkey ytHz in ytHzs){%>
-<%if (ytHz.Type==1){ %><a href="<%=URL("P_Search",""+Lang(ytHz.Name)+"") %>"><%}else{ %><a href="<%=ytHz.URL%>" target="_blank"><%} %><span><%=Lang(ytHz.Name)%></span></a>
-<%ytHz_index++;}%>
+<%Table="Lebi_Searchkey";Where="";Order="Sort desc,id desc";PageSize=5;pageindex=1;RecordCount=B_Lebi_Searchkey.Counts(Where);int iskR_index=1;
+List<Lebi_Searchkey> iskRs = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Searchkey iskR in iskRs){%>
+<%if (iskR.Type==1){ %><a href="<%=URL("P_Search",""+Lang(iskR.Name)+"") %>"><%}else{ %><a href="<%=iskR.URL%>" target="_blank"><%} %><span><%=Lang(iskR.Name)%></span></a>
+<%iskR_index++;}%>
 </div>
 
         </div>
-        <div class="toplink">
+        <div class="toplink"> 
             <a href="<%=URL("P_UserCenter","") %>">
-                <img src="/theme/newdefault/images/topIco1.png">我的账号</a> <a href="<%=URL("P_Basket","") %>">
-                    <img src="/theme/newdefault/images/topIco2.png">购物车</a>
+                <img src="/theme/newdefault/images/topIco1.png">我的账号</a>
+            <a href="<%=URL("P_Basket","") %>">
+                <img src="/theme/newdefault/images/topIco2.png">购物车</a>
         </div>
     </div>
 </div>
@@ -263,10 +265,10 @@ List<Lebi_Searchkey> ytHzs = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pag
       <div class="other-menu">
         
 
-<%Table="Lebi_Page";Where="Node_id="+Node("HeadMenu").id+" and ','+Language_ids+',' like '%," + CurrentLanguage.id + ",%'";Order="Sort desc";PageSize=10;pageindex=1;RecordCount=B_Lebi_Page.Counts(Where);int MOxg_index=1;
-List<Lebi_Page> MOxgs = B_Lebi_Page.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Page MOxg in MOxgs){%>
-<a class="menu" href="<%=URL("","",MOxg.url)%>" target="<%=MOxg.target%>"><span style="color:<%=MOxg.NameColor%>"><%=MOxg.Name%></span></a> 
-<%MOxg_index++;}%>
+<%Table="Lebi_Page";Where="Node_id="+Node("HeadMenu").id+" and ','+Language_ids+',' like '%," + CurrentLanguage.id + ",%'";Order="Sort desc";PageSize=10;pageindex=1;RecordCount=B_Lebi_Page.Counts(Where);int MlIb_index=1;
+List<Lebi_Page> MlIbs = B_Lebi_Page.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Page MlIb in MlIbs){%>
+<a class="menu" href="<%=URL("","",MlIb.url)%>" target="<%=MlIb.target%>"><span style="color:<%=MlIb.NameColor%>"><%=MlIb.Name%></span></a> 
+<%MlIb_index++;}%>
 
       </div>
     </div>
@@ -566,12 +568,12 @@ $(this).find('.allnav-show').slideUp("fast");
     <%=Lang(SYS.FootHtml) %>
     <div class="copyright f11 footer_logos">
         <div class="footer_logos-list">
-            <%Table="Lebi_FriendLink";Where="IsShow=1 and ','+Language_ids+',' like '%," + CurrentLanguage.id + ",%'";Order="Sort desc,id desc";PageSize=7;pageindex=1;RecordCount=B_Lebi_FriendLink.Counts(Where);int bLhz_index=1;
-List<Lebi_FriendLink> bLhzs = B_Lebi_FriendLink.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_FriendLink bLhz in bLhzs){%>
+            <%Table="Lebi_FriendLink";Where="IsShow=1 and ','+Language_ids+',' like '%," + CurrentLanguage.id + ",%'";Order="Sort desc,id desc";PageSize=7;pageindex=1;RecordCount=B_Lebi_FriendLink.Counts(Where);int YdMf_index=1;
+List<Lebi_FriendLink> YdMfs = B_Lebi_FriendLink.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_FriendLink YdMf in YdMfs){%>
             
-                <% if (bLhz.Logo != "" && bLhz.IsPic == 1){ %><a href="<%=bLhz.Url%>" target="_blank"><img src="<%=Image(bLhz.Logo) %>" alt="<%=bLhz.Name%>" /></a><%}else{%><a href="<%=bLhz.Url%>" target="_blank"><%=bLhz.Name%></a><%} %>     
+                <% if (YdMf.Logo != "" && YdMf.IsPic == 1){ %><a href="<%=YdMf.Url%>" target="_blank"><img src="<%=Image(YdMf.Logo) %>" alt="<%=YdMf.Name%>" /></a><%}else{%><a href="<%=YdMf.Url%>" target="_blank"><%=YdMf.Name%></a><%} %>     
            
-            <%bLhz_index++;}%>
+            <%YdMf_index++;}%>
          </div>
     </div>
 </div>
