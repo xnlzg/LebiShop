@@ -1051,7 +1051,6 @@
     <Content Include="onlinepay\yinlianqmf\default.aspx" />
     <Content Include="onlinepay\yinlianqmf\notify_url.aspx" />
     <Content Include="pic.aspx" />
-    <Content Include="platform\default.html" />
     <Content Include="platform\login_twitter.aspx" />
     <Content Include="platform\login_weixin.aspx" />
     <Content Include="platform\redirect_weixin.aspx" />
@@ -5643,6 +5642,7 @@
     <Content Include="onlinepay\qianhai\default.aspx.r3563" />
     <Content Include="onlinepay\qianhai\default.aspx.r3586" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="theme\system\js\My97DatePicker\skin\blue\vssver2.scc" />
     <None Include="theme\system\js\My97DatePicker\skin\default\vssver2.scc" />
     <None Include="theme\system\js\My97DatePicker\skin\vssver2.scc" />
