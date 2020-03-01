@@ -310,7 +310,7 @@ Page:P_CheckOut
             </div>
         </div>
     </div>
-    <%if (CurrentUser.Money > 0){ %>
+    <%if (CurrentUser.Money >= 0){ %>
     <div class="item">
         <div class="title"><input type="checkbox" value="3" id="payusermoney" name="usermoneytype" onclick="selectusermongy();" order="true"/>{tag:使用余额}</div>
         <div class="content">
@@ -385,8 +385,15 @@ Page:P_CheckOut
         //    return false;
         //$("#overlay").show();
         var postData = GetFormJsonData("order");
-        var url = path+"/ajax/ajax_order.aspx?__Action=order_save&sid=<%=sid %>";
-        RequestAjax(url, postData, function (res) { MsgBox(1, "{tag:正在提交……}", "<%=URL("P_Cashier","")%>?order_id=" + res.id +"") });
+        var order = parseFloat($("#money_order").val());
+        var used = parseFloat($("#Money_canused").val());
+        if (order > used) {
+            MsgBox(2, "余额不足"); 
+        } else {
+            var url = path+"/ajax/ajax_order.aspx?__Action=order_save&sid=<%=sid %>";
+            RequestAjax(url, postData, function (res) { MsgBox(1, "{tag:正在提交……}", "<%=URL("P_Cashier","")%>?order_id=" + res.id +"") });
+        }
+     
     }
     $(function () {
         $(".otherpay .item .title").each(function (i) {

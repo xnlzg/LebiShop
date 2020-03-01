@@ -335,6 +335,9 @@ namespace Shop.Bussiness
                             //}
                             //else
                             //{
+                            //设置集运金额 lzg
+                            var strSql = $"SELECT  [AccountAmount]  FROM  [dbo].[Client] WHERE ClientEmail='{user.UserName}'";
+                            user.Money=Convert.ToDecimal(LB.DataAccess.DB.InstanceJY.TextExecute(strSql));
                             return user;
                             //}
                         }

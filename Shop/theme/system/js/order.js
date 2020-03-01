@@ -27,7 +27,14 @@ function Setpay() {
     }
     else if (obj.attr("Code") != 'OnlinePay' && obj.attr("Code") != 'OfflinePay') {
         $("#onlinepay").hide();
-        $("#bank" + obj.val()).show();
+        $("#payusermoney").attr("disabled", true).attr("checked", 'true');
+        var t1= setInterval(function () {
+            selectusermongy();
+            $('.otherpay .item .content').show();
+            window.clearInterval(t1);
+        }, 1000);
+       
+        //$("#bank" + obj.val()).show();
         //if (obj.attr("Code") == 'OfflinePay')//货到付款
         //    $("#offlinepay").hide();
         //else

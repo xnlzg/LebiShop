@@ -148,8 +148,8 @@ namespace Shop.Ajax
             string Pay_Password = RequestTool.RequestSafeString("Pay_Password");
             Lebi_PickUp pick = null;
             DateTime pickdate = System.DateTime.Now;
-            if (usermoneytype == 3)
-            {
+            //if (usermoneytype == 3)
+            //{
                 if (Pay_Password == "")
                 {
                     Response.Write("{\"msg\":\"" + Tag("请输入支付密码") + "\"}");
@@ -168,7 +168,7 @@ namespace Shop.Ajax
                     Response.Write("{\"msg\":\"" + Tag("余额不足") + "\"}");
                     return;
                 }
-            }
+            //}
             Lebi_Pay pay = B_Lebi_Pay.GetModel(pay_id);
             if (pay == null)
             {
@@ -770,6 +770,13 @@ namespace Shop.Ajax
                 order.Time_Refund = System.DateTime.Now;
                 B_Lebi_Order.Update(order);
             }
+
+            if (order.Pay_id == 0)
+            {
+                //LZG
+                var strSql = $"UPDATE [dbo].[Client] SET [AccountAmount]=[AccountAmount]+{order.Money_Order}   WHERE ClientEmail='{CurrentUser.UserName}'";
+                LB.DataAccess.DB.InstanceJY.TextExecute(strSql);
+            } 
             Log.Add("取消订单", "Order", order.id.ToString(), CurrentUser);
             Response.Write("{\"msg\":\"OK\"}");
         }

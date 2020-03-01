@@ -79,6 +79,9 @@ namespace Shop.Bussiness
             mo.Money_after = user.Money;
             mo.Money_fanxian_after = user.Money_fanxian;
             B_Lebi_User_Money.Add(mo);
+            //LZG
+            var strSql = $"UPDATE [dbo].[Client] SET [AccountAmount]=[AccountAmount]{money}   WHERE ClientEmail='{user.UserName}'";
+            LB.DataAccess.DB.InstanceJY.TextExecute(strSql);
             //·¢ËÍ¶ÌÐÅ
             SMS.SendSMS_balance(user);
             //APPÍÆËÍ

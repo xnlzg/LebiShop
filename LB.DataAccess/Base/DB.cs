@@ -43,7 +43,30 @@ namespace LB.DataAccess
         #endregion
 
 
-
+        #region ¾²Ì¬ÊµÀý-Ä¬ÈÏ
+        private static IDB _InstanceJY;
+        public static IDB InstanceJY
+        {
+            get
+            {
+                if (_InstanceJY == null)
+                {
+                    if (BaseUtils.BaseUtilsInstance.DBType == "mysql")
+                        _InstanceJY = new MySQLUtils(GetConnString("56xt"));
+                    else
+                    {
+                       
+                        _InstanceJY = new SqlUtils(GetConnString("56xt"));
+                    }
+                }
+                return _InstanceJY;
+            }
+            set
+            {
+                _InstanceJY = value;
+            }
+        }
+        #endregion
 
 
 

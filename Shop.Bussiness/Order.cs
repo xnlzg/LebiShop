@@ -535,6 +535,7 @@ namespace Shop.Bussiness
         /// <param name="CurrentUser"></param>
         public static void CardAndUserMoneyPay(Lebi_Order order, Lebi_User CurrentUser)
         {
+            ///罗泽光
             //<-{生成流水号，用于匹配资金明细记录 by lebi.kingdge 2018.8.20
             Random ran = new Random();
             order.PayNo = order.Code + System.DateTime.Now.Millisecond + ran.Next(100000, 999999);
@@ -616,7 +617,7 @@ namespace Shop.Bussiness
                     }
                 }
             }
-            if (usermoneytype.Contains("3") && money_pay > 0 && CurrentUser.Money > 0)//余额付款
+            if ((usermoneytype.Contains("3") || usermoneytype=="") && money_pay > 0 && CurrentUser.Money > 0)//余额付款
             {
                 decimal money_use = money_pay > CurrentUser.Money ? CurrentUser.Money : money_pay;
                 money_pay = money_pay - money_use;
@@ -631,6 +632,7 @@ namespace Shop.Bussiness
                 PaySuccess(order, "");
                 //order.IsPaid = 1;
                 //order.Time_Paid = System.DateTime.Now;
+               
             }
             order.Money_Paid = order.Money_UserCut + order.Money_UseCard311;// +order.Money_UseCard312;
             B_Lebi_Order.Update(order);

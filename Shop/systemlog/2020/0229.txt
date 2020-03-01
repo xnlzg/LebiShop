@@ -1,0 +1,128 @@
+﻿time:2020/2/29 23:05:00
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.035186092369258404
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:05:00
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.3602226471994072
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:06:47
+url:/Pay.aspx?order_id=1&order_code=200229230629363
+refererurl:/Cashier.aspx?order_id=1
+content:weixinpay-GetPayUrlproductId : 1
+
+time:2020/2/29 23:06:47
+url:/Pay.aspx?order_id=1&order_code=200229230629363
+refererurl:/Cashier.aspx?order_id=1
+content:weixinpay-UnifiedOrder MCHID : xxx，KEY : http://localhost/onlinepay/weixinpay/payNotifyUrl.aspx，APPID : 
+
+time:2020/2/29 23:06:47
+url:/Pay.aspx?order_id=1&order_code=200229230629363
+refererurl:/Cashier.aspx?order_id=1
+content:WxPayApiUnfiedOrder response : <xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+
+time:2020/2/29 23:06:47
+url:/Pay.aspx?order_id=1&order_code=200229230629363
+refererurl:/Cashier.aspx?order_id=1
+content:weixinpay-GetPayUrlresult : System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 weixinpay.WxPayApi.Report(WxPayData inputObj, Int32 timeOut) 位置 E:\MyProjects\LebiShop\Shop\onlinepay\weixinpay\App_Code\lib2015\WxPayApi.cs:行号 604
+   在 weixinpay.WxPayApi.ReportCostTime(String interface_url, Int32 timeCost, WxPayData inputObj) 位置 E:\MyProjects\LebiShop\Shop\onlinepay\weixinpay\App_Code\lib2015\WxPayApi.cs:行号 585
+   在 weixinpay.WxPayApi.UnifiedOrder(WxPayData inputObj, Int32 timeOut) 位置 E:\MyProjects\LebiShop\Shop\onlinepay\weixinpay\App_Code\lib2015\WxPayApi.cs:行号 469
+   在 weixinpay.NativePay.GetPayUrl(String productId) 位置 E:\MyProjects\LebiShop\Shop\onlinepay\weixinpay\App_Code\lib2015\NativePay.cs:行号 78
+
+time:2020/2/29 23:07:53
+url:/Pay.aspx?order_id=1
+refererurl:/user/OrderDetails.aspx?id=1
+content:weixinpay-GetPayUrlproductId : 1
+
+time:2020/2/29 23:07:53
+url:/Pay.aspx?order_id=1
+refererurl:/user/OrderDetails.aspx?id=1
+content:weixinpay-UnifiedOrder MCHID : xxx，KEY : http://localhost/onlinepay/weixinpay/payNotifyUrl.aspx，APPID : 
+
+time:2020/2/29 23:07:54
+url:/Pay.aspx?order_id=1
+refererurl:/user/OrderDetails.aspx?id=1
+content:WxPayApiUnfiedOrder response : <xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+
+time:2020/2/29 23:07:54
+url:/Pay.aspx?order_id=1
+refererurl:/user/OrderDetails.aspx?id=1
+content:weixinpay-GetPayUrlresult : System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 weixinpay.WxPayApi.Report(WxPayData inputObj, Int32 timeOut) 位置 E:\MyProjects\LebiShop\Shop\onlinepay\weixinpay\App_Code\lib2015\WxPayApi.cs:行号 604
+   在 weixinpay.WxPayApi.ReportCostTime(String interface_url, Int32 timeCost, WxPayData inputObj) 位置 E:\MyProjects\LebiShop\Shop\onlinepay\weixinpay\App_Code\lib2015\WxPayApi.cs:行号 585
+   在 weixinpay.WxPayApi.UnifiedOrder(WxPayData inputObj, Int32 timeOut) 位置 E:\MyProjects\LebiShop\Shop\onlinepay\weixinpay\App_Code\lib2015\WxPayApi.cs:行号 469
+   在 weixinpay.NativePay.GetPayUrl(String productId) 位置 E:\MyProjects\LebiShop\Shop\onlinepay\weixinpay\App_Code\lib2015\NativePay.cs:行号 78
+
+time:2020/2/29 23:17:07
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.6969942827709019
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:18:58
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.5781041071750224
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:24:25
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.4547192086465657
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:26:38
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.9894315206911415
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:26:54
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.008039017906412482
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:31:00
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.5654617871623486
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:38:19
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.1273390834685415
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:40:41
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.08264942863024771
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:44:29
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.3230039852205664
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:45:42
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.2754278532229364
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:46:55
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.7054420397616923
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:47:36
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.673886287258938
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:52:10
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.20377027336508036
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/2/29 23:52:42
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.7757961431052536
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+

@@ -21,29 +21,41 @@ namespace Shop
         protected List<Lebi_Bill> bills;
         protected List<Lebi_Order_Product> order_products;
         protected Lebi_Pay pay;
+
         protected override void LoadPage(string themecode, int siteid, string languagecode, string pcode)
         {
             if (CurrentUser.id == 0)
             {
-                Response.Redirect(URL("P_Login", "" + HttpUtility.UrlEncode(RequestTool.GetRequestUrlNonDomain()) + "," + GetUrlToken(RequestTool.GetRequestUrlNonDomain())+ ""));
+                Response.Redirect(URL("P_Login",
+                    "" + HttpUtility.UrlEncode(RequestTool.GetRequestUrlNonDomain()) + "," +
+                    GetUrlToken(RequestTool.GetRequestUrlNonDomain()) + ""));
             }
+
             LoadTheme(themecode, siteid, languagecode, pcode);
             CurrentPage = B_Lebi_Theme_Page.GetModel("Code='P_UserOrderDetails'");
             id = Rint("id");
-            order = B_Lebi_Order.GetModel("(IsDel!=1 or IsDel is null) and User_id = " + CurrentUser.id + " and id = " + id + "");
+            order = B_Lebi_Order.GetModel("(IsDel!=1 or IsDel is null) and User_id = " + CurrentUser.id + " and id = " +
+                                          id + "");
             if (order == null)
             {
                 PageError();
             }
+
             if (order.User_id != CurrentUser.id)
             {
                 PageError();
             }
+
             if (order.Type_id_OrderType == 212)
             {
                 Response.Redirect(URL("P_UserReturnDetails", id));
             }
-            path = "<a href=\"" + URL("P_Index", "") + "\" class=\"home\" title=\"" + Tag("首页") + "\"><span>" + Tag("首页") + "</span></a><em class=\"home\">&raquo;</em><a href=\"" + URL("P_UserCenter", "") + "\"><span>" + Tag("会员中心") + "</span></a><em>&raquo;</em><a href=\"" + URL("P_UserOrders", "") + "\"><span>" + Tag("我的订单") + "</span></a><em>&raquo;</em><a href=\"" + URL("P_UserOrderDetails", id) + "\"><span>" + Tag("订单") + "：" + order.Code + "</span></a>";
+
+            path = "<a href=\"" + URL("P_Index", "") + "\" class=\"home\" title=\"" + Tag("首页") + "\"><span>" +
+                   Tag("首页") + "</span></a><em class=\"home\">&raquo;</em><a href=\"" + URL("P_UserCenter", "") +
+                   "\"><span>" + Tag("会员中心") + "</span></a><em>&raquo;</em><a href=\"" + URL("P_UserOrders", "") +
+                   "\"><span>" + Tag("我的订单") + "</span></a><em>&raquo;</em><a href=\"" + URL("P_UserOrderDetails", id) +
+                   "\"><span>" + Tag("订单") + "：" + order.Code + "</span></a>";
             CurrentPage = B_Lebi_Theme_Page.GetModel("Code='P_UserOrderDetails'");
             id = Rint_Para("0");
             comments = B_Lebi_Comment.GetList("TableName='Order' and Keyid=" + order.id, "id desc");
@@ -57,7 +69,13 @@ namespace Shop
             {
                 pay.Code = "OnlinePay";
             }
+
+            if (order.Pay_id == 0)
+            {
+                pay.Code = "";
+            }
         }
+
         public override string ThemePageMeta(string code, string tag)
         {
             string str = "";

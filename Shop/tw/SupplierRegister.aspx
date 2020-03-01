@@ -108,11 +108,11 @@
     <ul class="droplanguage">
         <li class="language_li"><a class="noclick"><span>網站語言：</span><s><%if (CurrentLanguage.ImageUrl!=""){%><img src="<%=Image(CurrentLanguage.ImageUrl) %>" /><%}%><%=CurrentLanguage.Name %></s></a><dl
             class="language_li_content">
-            <%List<DB.LebiShop.Lebi_Language> pwass=Languages();RecordCount=pwass.Count;int pwas_index=1;
-foreach (DB.LebiShop.Lebi_Language pwas in pwass){%>
-            <dd <%if (pwas_index==RecordCount){%>class="last" <%} %>>
-                <a href="javascript:SetLanguage(<%=pwas.id%>,'<%=pwas.Code%>','<%=pwas.Path%>');"><%if (pwas.ImageUrl!=""){%><img src="<%=Image(pwas.ImageUrl) %>" /><%}%><%=pwas.Name%></a></dd>
-            <%pwas_index++;}%>
+            <%List<DB.LebiShop.Lebi_Language> IKvJs=Languages();RecordCount=IKvJs.Count;int IKvJ_index=1;
+foreach (DB.LebiShop.Lebi_Language IKvJ in IKvJs){%>
+            <dd <%if (IKvJ_index==RecordCount){%>class="last" <%} %>>
+                <a href="javascript:SetLanguage(<%=IKvJ.id%>,'<%=IKvJ.Code%>','<%=IKvJ.Path%>');"><%if (IKvJ.ImageUrl!=""){%><img src="<%=Image(IKvJ.ImageUrl) %>" /><%}%><%=IKvJ.Name%></a></dd>
+            <%IKvJ_index++;}%>
         </dl>
         </li>
     </ul>
@@ -125,11 +125,11 @@ foreach (DB.LebiShop.Lebi_Language pwas in pwass){%>
     <ul class="dropcurrency">
         <li class="currency_li"><a class="noclick"><span>幣種：</span><s><%=CurrentCurrency.Code %></s></a><dl
             class="currency_li_content">
-            <%Table="Lebi_Currency";Where="";Order="Sort desc";PageSize=20;pageindex=Rint("page");RecordCount=B_Lebi_Currency.Counts(Where);int EimB_index=1;
-List<Lebi_Currency> EimBs = B_Lebi_Currency.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Currency EimB in EimBs){%>
-            <dd <%if (EimB_index==RecordCount){%>class="last" <%} %>>
-                <a href="javascript:SetCurrency(<%=EimB.id%>,'<%=EimB.Code%>',<%=EimB.ExchangeRate%>,'<%=EimB.Msige%>','<%=EimB.DecimalLength%>');"><%=EimB.Code%></a></dd>
-            <%EimB_index++;}%>
+            <%Table="Lebi_Currency";Where="";Order="Sort desc";PageSize=20;pageindex=Rint("page");RecordCount=B_Lebi_Currency.Counts(Where);int rFcy_index=1;
+List<Lebi_Currency> rFcys = B_Lebi_Currency.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Currency rFcy in rFcys){%>
+            <dd <%if (rFcy_index==RecordCount){%>class="last" <%} %>>
+                <a href="javascript:SetCurrency(<%=rFcy.id%>,'<%=rFcy.Code%>',<%=rFcy.ExchangeRate%>,'<%=rFcy.Msige%>','<%=rFcy.DecimalLength%>');"><%=rFcy.Code%></a></dd>
+            <%rFcy_index++;}%>
         </dl>
         </li>
     </ul>
@@ -153,8 +153,8 @@ List<Lebi_Currency> EimBs = B_Lebi_Currency.GetList(Where, Order,PageSize ,pagei
 
 <script type="text/javascript">
     $(function () {
-        blurInput('#keyword', '<%if (Rstring("Keyword")!=""){ %><%=Rstring("Keyword")%><%}else{%><%Table="Lebi_Searchkey";Where="Type=1";Order="Sort desc,id desc";PageSize=1;pageindex=1;RecordCount=B_Lebi_Searchkey.Counts(Where);int kekx_index=1;
-List<Lebi_Searchkey> kekxs = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Searchkey kekx in kekxs){%><%=Lang(kekx.Name)%><%kekx_index++;}%><%} %>');
+        blurInput('#keyword', '<%if (Rstring("Keyword")!=""){ %><%=Rstring("Keyword")%><%}else{%><%Table="Lebi_Searchkey";Where="Type=1";Order="Sort desc,id desc";PageSize=1;pageindex=1;RecordCount=B_Lebi_Searchkey.Counts(Where);int niKO_index=1;
+List<Lebi_Searchkey> niKOs = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Searchkey niKO in niKOs){%><%=Lang(niKO.Name)%><%niKO_index++;}%><%} %>');
         $(".searchform .button").click(function(){
             var typename = $('#searchtype').attr('typename');
             var url = "";
@@ -200,10 +200,10 @@ List<Lebi_Searchkey> kekxs = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pag
             
 
 <div class="searchkeyword">
-<%Table="Lebi_Searchkey";Where="";Order="Sort desc,id desc";PageSize=5;pageindex=1;RecordCount=B_Lebi_Searchkey.Counts(Where);int dkKw_index=1;
-List<Lebi_Searchkey> dkKws = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Searchkey dkKw in dkKws){%>
-<%if (dkKw.Type==1){ %><a href="<%=URL("P_Search",""+Lang(dkKw.Name)+"") %>"><%}else{ %><a href="<%=dkKw.URL%>" target="_blank"><%} %><span><%=Lang(dkKw.Name)%></span></a>
-<%dkKw_index++;}%>
+<%Table="Lebi_Searchkey";Where="";Order="Sort desc,id desc";PageSize=5;pageindex=1;RecordCount=B_Lebi_Searchkey.Counts(Where);int qhzp_index=1;
+List<Lebi_Searchkey> qhzps = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Searchkey qhzp in qhzps){%>
+<%if (qhzp.Type==1){ %><a href="<%=URL("P_Search",""+Lang(qhzp.Name)+"") %>"><%}else{ %><a href="<%=qhzp.URL%>" target="_blank"><%} %><span><%=Lang(qhzp.Name)%></span></a>
+<%qhzp_index++;}%>
 </div>
 
         </div>
@@ -265,10 +265,10 @@ List<Lebi_Searchkey> dkKws = B_Lebi_Searchkey.GetList(Where, Order,PageSize ,pag
       <div class="other-menu">
         
 
-<%Table="Lebi_Page";Where="Node_id="+Node("HeadMenu").id+" and ','+Language_ids+',' like '%," + CurrentLanguage.id + ",%'";Order="Sort desc";PageSize=10;pageindex=1;RecordCount=B_Lebi_Page.Counts(Where);int Gkum_index=1;
-List<Lebi_Page> Gkums = B_Lebi_Page.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Page Gkum in Gkums){%>
-<a class="menu" href="<%=URL("","",Gkum.url)%>" target="<%=Gkum.target%>"><span style="color:<%=Gkum.NameColor%>"><%=Gkum.Name%></span></a> 
-<%Gkum_index++;}%>
+<%Table="Lebi_Page";Where="Node_id="+Node("HeadMenu").id+" and ','+Language_ids+',' like '%," + CurrentLanguage.id + ",%'";Order="Sort desc";PageSize=10;pageindex=1;RecordCount=B_Lebi_Page.Counts(Where);int DRDq_index=1;
+List<Lebi_Page> DRDqs = B_Lebi_Page.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_Page DRDq in DRDqs){%>
+<a class="menu" href="<%=URL("","",DRDq.url)%>" target="<%=DRDq.target%>"><span style="color:<%=DRDq.NameColor%>"><%=DRDq.Name%></span></a> 
+<%DRDq_index++;}%>
 
       </div>
     </div>
@@ -542,12 +542,12 @@ $(this).find('.allnav-show').slideUp("fast");
     <%=Lang(SYS.FootHtml) %>
     <div class="copyright f11 footer_logos">
         <div class="footer_logos-list">
-            <%Table="Lebi_FriendLink";Where="IsShow=1 and ','+Language_ids+',' like '%," + CurrentLanguage.id + ",%'";Order="Sort desc,id desc";PageSize=7;pageindex=1;RecordCount=B_Lebi_FriendLink.Counts(Where);int agna_index=1;
-List<Lebi_FriendLink> agnas = B_Lebi_FriendLink.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_FriendLink agna in agnas){%>
+            <%Table="Lebi_FriendLink";Where="IsShow=1 and ','+Language_ids+',' like '%," + CurrentLanguage.id + ",%'";Order="Sort desc,id desc";PageSize=7;pageindex=1;RecordCount=B_Lebi_FriendLink.Counts(Where);int Vuyt_index=1;
+List<Lebi_FriendLink> Vuyts = B_Lebi_FriendLink.GetList(Where, Order,PageSize ,pageindex);foreach (Lebi_FriendLink Vuyt in Vuyts){%>
             
-                <% if (agna.Logo != "" && agna.IsPic == 1){ %><a href="<%=agna.Url%>" target="_blank"><img src="<%=Image(agna.Logo) %>" alt="<%=agna.Name%>" /></a><%}else{%><a href="<%=agna.Url%>" target="_blank"><%=agna.Name%></a><%} %>     
+                <% if (Vuyt.Logo != "" && Vuyt.IsPic == 1){ %><a href="<%=Vuyt.Url%>" target="_blank"><img src="<%=Image(Vuyt.Logo) %>" alt="<%=Vuyt.Name%>" /></a><%}else{%><a href="<%=Vuyt.Url%>" target="_blank"><%=Vuyt.Name%></a><%} %>     
            
-            <%agna_index++;}%>
+            <%Vuyt_index++;}%>
          </div>
     </div>
 </div>
