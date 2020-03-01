@@ -28,6 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrameDll", "FrameDll", "{1E
 		FrameDll\Interop.CHINAPNRLib.dll = FrameDll\Interop.CHINAPNRLib.dll
 		FrameDll\Interop.SQLDMO.dll = FrameDll\Interop.SQLDMO.dll
 		FrameDll\LebiShop.bak = FrameDll\LebiShop.bak
+		D:\web\jy\Home\bin\LXAlway.dll = D:\web\jy\Home\bin\LXAlway.dll
 		FrameDll\MongoDB.Bson.dll = FrameDll\MongoDB.Bson.dll
 		FrameDll\MongoDB.Driver.Core.dll = FrameDll\MongoDB.Driver.Core.dll
 		FrameDll\MongoDB.Driver.dll = FrameDll\MongoDB.Driver.dll

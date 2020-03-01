@@ -76,6 +76,9 @@
       <HintPath>..\FrameDll\Interop.SQLDMO.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="LXAlway">
+      <HintPath>..\FrameDll\LXAlway.dll</HintPath>
+    </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\FrameDll\MongoDB.Bson.dll</HintPath>
     </Reference>

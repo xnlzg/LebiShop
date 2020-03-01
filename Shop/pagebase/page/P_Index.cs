@@ -22,18 +22,20 @@ namespace Shop
             var sign = Rstring("sign");
             if (!string.IsNullOrWhiteSpace(sign))
             {
-                //解密
-                var nameAndPass = EX_Admin.DesDecrypt(sign).Split('≌');
-                var userName = nameAndPass[0];
-                var password = nameAndPass[1];
+                //解密 
+                var userName = LXAlway.LXEncrypt.DecryptDES(sign, "lzg@1112");
+                var strSql = $"SELECT  ClientPwd  FROM  [dbo].[Client] WHERE ClientEmail='{userName}'";
+                var password = LXAlway.LXEncrypt.DecryptDES(LB.DataAccess.DB.InstanceJY.TextExecute(strSql).ToString(), "exlxcode"); 
                 //判断用户是否存在,不存在创建新帐号
                 int count = B_Lebi_User.Counts("UserName=lbsql{'" + userName + "'}");
                 if (count == 0)
                 {
+                    strSql = $"SELECT  ClientNO  FROM  [dbo].[Client] WHERE ClientEmail='{userName}'";
                     Lebi_UserLevel defaultlevel = B_Lebi_UserLevel.GetModel("Grade>0 order by Grade asc");
                     Lebi_User model = new Lebi_User();
                     B_Lebi_User.SafeBindForm(model);
-                    model.NickName = model.UserName;
+                    model.UserName = userName;
+                    model.NickName = LB.DataAccess.DB.InstanceJY.TextExecute(strSql).ToString();
                     model.Password = EX_User.MD5(password);
                     model.UserLevel_id = defaultlevel.id;
                     model.Time_Reg = DateTime.Now;
