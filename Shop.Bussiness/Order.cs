@@ -626,7 +626,7 @@ namespace Shop.Bussiness
             }
             order.Money_Pay = money_pay;
             if (order.Money_Pay == 0)//全部余额支付
-            {
+            { 
                 order.Pay_id = 0;
                 order.Pay = Bussiness.Language.GetTag("账户余额");
                 PaySuccess(order, "");
@@ -743,12 +743,12 @@ namespace Shop.Bussiness
             Lebi_User user = B_Lebi_User.GetModel(order.User_id);
             if (user == null)
                 return false;
-            if ((order.Money_Order - order.Money_Paid) > order.Money_Pay)
+            if ((order.Money_Order - order.Money_Paid) > order.Money_Pay && order.Pay_id != 0)
             {
                 Log.Add("金额校验错误[" + (order.Money_Pay + order.Money_Paid) + "]", "Order", order.id.ToString(), user, "");
                 return false;
             }
-            if (outcode=="" || outcode == "ERP")
+            if ((outcode=="" || outcode == "ERP") && order.Pay_id != 0)
             {
                 //<-{生成流水号，用于匹配资金明细记录 by lebi.kingdge 2018.8.20
                 Random ran = new Random();

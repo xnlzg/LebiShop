@@ -1,0 +1,147 @@
+﻿time:2020/3/4 20:51:39
+url:/admin/order/order_view.aspx?id=38
+refererurl:/admin/order/default.aspx?t=211
+content:22222:Lebi_User*id=2
+
+time:2020/3/4 20:53:08
+url:/admin/order/order_view.aspx?id=42
+refererurl:/admin/order/default.aspx?t=211
+content:22222:Lebi_User*id=6
+
+time:2020/3/4 20:55:55
+url:/admin/order/order_view.aspx?id=42
+refererurl:/admin/order/default.aspx?t=211
+content:22222:Lebi_User*id=6
+
+time:2020/3/4 20:57:38
+url:/admin/order/order_view.aspx
+refererurl:
+content:22222:Lebi_User*id=0
+
+time:2020/3/4 20:57:45
+url:/admin/order/order_view.aspx?id=42
+refererurl:/admin/order/default.aspx?t=211
+content:22222:Lebi_User*id=6
+
+time:2020/3/4 21:04:50
+url:/admin/order/order_view.aspx?id=1
+refererurl:/admin/order/default.aspx?t=211
+content:22222:Lebi_User*id=1
+
+time:2020/3/4 21:16:06
+url:/admin/ajax/ajax_order.aspx?__Action=Order_type&id=42&model=IsVerified&random=0.7479841480962932
+refererurl:/admin/order/order_view.aspx?id=42
+content:计算佣金True
+
+time:2020/3/4 21:16:06
+url:/admin/ajax/ajax_order.aspx?__Action=Order_type&id=42&model=IsVerified&random=0.7479841480962932
+refererurl:/admin/order/order_view.aspx?id=42
+content:推广佣金-开始
+
+time:2020/3/4 21:16:24
+url:/admin/ajax/ajax_order.aspx?__Action=Order_type&id=42&model=IsPaid
+refererurl:/admin/order/order_view.aspx?id=42
+content:20030420291286付款成功-已经更新订单
+
+time:2020/3/4 21:17:02
+url:/admin/ajax/ajax_order.aspx?__Action=Order_type&id=42&model=IsPaid
+refererurl:/admin/order/order_view.aspx?id=42
+content:20030420291286付款成功-已经更新订单
+
+time:2020/3/4 21:19:43
+url:/admin/ajax/ajax_order.aspx?__Action=Order_type&id=42&model=IsPaid
+refererurl:/admin/order/order_view.aspx?id=42
+content:20030420291286付款成功-已经更新订单
+
+time:2020/3/4 21:26:12
+url:/admin/ajax/ajax_order.aspx?__Action=Order_type&id=42&model=IsPaid
+refererurl:/admin/order/order_view.aspx?id=42
+content:20030420291286付款成功-已经更新订单
+
+time:2020/3/4 21:32:00
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.015524416463449597
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/3/4 21:33:58
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.057539630215615034
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/3/4 21:41:59
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.7607227021362633
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/3/4 21:42:24
+url:/ajax/ajax_order.aspx?__Action=order_save&sid=0&random=0.7673237062990665
+refererurl:/CheckOut.aspx
+content:2003042142064付款成功-已经更新订单
+
+time:2020/3/4 21:43:00
+url:/ajax/ajax_order.aspx?__Action=order_save&sid=0&random=0.7673237062990665
+refererurl:/CheckOut.aspx
+content:System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Convert.ToDecimal(String value)
+   在 Shop.Bussiness.Order.PaySuccess(Lebi_Order order, String outcode) 位置 E:\MyProjects\LebiShop\Shop.Bussiness\Order.cs:行号 855
+   在 Shop.Bussiness.Order.CardAndUserMoneyPay(Lebi_Order order, Lebi_User CurrentUser) 位置 E:\MyProjects\LebiShop\Shop.Bussiness\Order.cs:行号 632
+   在 Shop.Bussiness.Order.CreateOrder(Lebi_User user, Basket basket, Lebi_User_Address shouhuo, Lebi_BillType billtype, Lebi_Currency CurrentCurrency, Lebi_Site currentsite, Lebi_Language CurrentLanguage, Lebi_Order& ordergroup) 位置 E:\MyProjects\LebiShop\Shop.Bussiness\Order.cs:行号 407
+
+time:2020/3/4 21:44:17
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.7518452312797308
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/3/4 21:45:59
+url:/ajax/ajax_order.aspx?__Action=order_save&sid=0&random=0.7249483065679669
+refererurl:/CheckOut.aspx
+content:200304214426524付款成功-已经更新订单
+
+time:2020/3/4 21:45:59
+url:/ajax/ajax_order.aspx?__Action=order_save&sid=0&random=0.7249483065679669
+refererurl:/CheckOut.aspx
+content:System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Convert.ToDecimal(String value)
+   在 Shop.Bussiness.Order.PaySuccess(Lebi_Order order, String outcode) 位置 E:\MyProjects\LebiShop\Shop.Bussiness\Order.cs:行号 855
+   在 Shop.Bussiness.Order.CardAndUserMoneyPay(Lebi_Order order, Lebi_User CurrentUser) 位置 E:\MyProjects\LebiShop\Shop.Bussiness\Order.cs:行号 632
+   在 Shop.Bussiness.Order.CreateOrder(Lebi_User user, Basket basket, Lebi_User_Address shouhuo, Lebi_BillType billtype, Lebi_Currency CurrentCurrency, Lebi_Site currentsite, Lebi_Language CurrentLanguage, Lebi_Order& ordergroup) 位置 E:\MyProjects\LebiShop\Shop.Bussiness\Order.cs:行号 407
+
+time:2020/3/4 21:47:16
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.6092514586634934
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/3/4 21:47:32
+url:/ajax/ajax_order.aspx?__Action=order_save&sid=0&random=0.7817386398091912
+refererurl:/CheckOut.aspx
+content:20030421472260付款成功-已经更新订单
+
+time:2020/3/4 21:48:00
+url:/ajax/ajax_order.aspx?__Action=order_save&sid=0&random=0.7817386398091912
+refererurl:/CheckOut.aspx
+content:计算佣金True
+
+time:2020/3/4 21:48:00
+url:/ajax/ajax_order.aspx?__Action=order_save&sid=0&random=0.7817386398091912
+refererurl:/CheckOut.aspx
+content:推广佣金-开始
+
+time:2020/3/4 21:48:01
+url:/ajax/ajax_order.aspx?__Action=order_save&sid=0&random=0.7817386398091912
+refererurl:/CheckOut.aspx
+content:20030421472260付款成功-开始分配货款
+
+time:2020/3/4 21:48:04
+url:/ajax/ajax_order.aspx?__Action=order_save&sid=0&random=0.7817386398091912
+refererurl:/CheckOut.aspx
+content:20030421472260付款成功-开始发送短信
+
+time:2020/3/4 21:48:04
+url:/ajax/ajax_order.aspx?__Action=order_save&sid=0&random=0.7817386398091912
+refererurl:/CheckOut.aspx
+content:20030421472260付款成功-开始触发事件
+

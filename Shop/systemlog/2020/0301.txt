@@ -298,3 +298,13 @@ url:/inc/CheckOut_Pay.aspx?sid=0&random=0.8231512969359756
 refererurl:/CheckOut.aspx
 content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
 
+time:2020/3/1 16:41:26
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.06979824672453105
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
+time:2020/3/1 16:41:26
+url:/inc/CheckOut_Pay.aspx?sid=0&random=0.8333365272264928
+refererurl:/CheckOut.aspx
+content:IsUsed=1 and parentid=0 and ','+Language_ids+',' like '%,351,%' and (showtype='' or showtype like '%web%')
+
