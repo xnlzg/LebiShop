@@ -10,7 +10,7 @@ using Shop.Model;using DB.LebiShop;
 using Shop.Bussiness;
 using LB.Tools;
 using System.Reflection;
-using System.Web.Script.Serialization;
+using System.Web.Script.Serialization; 
 
 namespace Shop.Admin.Ajax
 {
@@ -880,6 +880,84 @@ namespace Shop.Admin.Ajax
             }
             Log.Add("删除订单", "Order", id.ToString(), CurrentAdmin, "");
             Response.Write("{\"msg\":\"OK\"}");
+        }
+
+        /// <summary>
+        /// 同步商品到集运 lzg
+        /// </summary>
+        public void Sync_jy()
+        {
+            string id = RequestTool.RequestString("ids");
+            if (id == "")
+            {
+                Response.Write("{\"msg\":\"" + Tag("参数错误") + "\"}");
+                return;
+            }
+            List<Lebi_Order> modellist = B_Lebi_Order.GetList("id in (lbsql{" + id + "})", "");
+            foreach (Lebi_Order model in modellist)
+            {
+                //用户名
+                var userName = model.User_UserName;
+                var strSql = $"SELECT  id  FROM  [dbo].[Client] WHERE ClientEmail='{userName}'";
+                var userId = int.Parse(LB.DataAccess.DB.InstanceJY.TextExecute(strSql).ToString());
+
+                var pros = B_Lebi_Order_Product.GetList("Order_id=" + model.id + "", "");
+                var Logs = B_Lebi_Log.GetList("TableName='Order' and Keyid='" + model.id + "'", "id desc");
+                var torders = B_Lebi_Transport_Order.GetList("Order_id=" + model.id + "", "id desc");
+                var comms = B_Lebi_Comment.GetList("TableName='Order' and Keyid=" + model.id + "", "id desc");
+                foreach (Lebi_Order_Product pro in pros)
+                {
+                    //查询商品信息
+                    var product = B_Lebi_Product.GetModel(pro.Product_id);
+                    var tagids=product.Pro_Tag_id.Split(',').ToList();
+                    var WareHouseId =0; //貨倉
+                    var ExpressId = 0; //快遞公司
+                    var Expressnum = torders.Count>0?torders[0].Code: ""; //快遞單號
+                    var Zm = 0; //貨物性質
+                    var ProductName = Shop.Bussiness.Language.Content(product.Name, CurrentLanguage.Code); //商品名稱
+                    var Num = pro.Count; //個數
+                    var Unitprice = pro.Price; //單價
+                    var Totalprice = pro.Money; //總價 
+                    var State = 1;
+                    var Del = 1;
+                    var Userid = userId;
+                    var Safety = 0;
+                    var Worth = 0;
+                    var Stored = 2;
+                    //樂天(日本)  雅虎(日本) 其他(日本)  自營(日本) 
+                    if (tagids.Contains("36") || tagids.Contains("40") || tagids.Contains("42") || tagids.Contains("44"))
+                    {
+                        WareHouseId = 4;
+                        ExpressId = 93;
+                    }
+                    //自營(台灣) 其他(台灣)
+                    if (tagids.Contains("45") || tagids.Contains("43") )
+                    {
+                        WareHouseId = 3;
+                        ExpressId =92;
+                    }
+
+                    if (WareHouseId > 0)
+                    {
+                        strSql = $"SELECT count(id) FROM [OrderList] WHERE Del=1 AND [WareHouseId]={WareHouseId} AND Expressnum='{Expressnum}'  AND [ExpressId]={ExpressId}";
+                        var count = int.Parse(LB.DataAccess.DB.InstanceJY.TextExecute(strSql).ToString());
+                        if (count == 0)
+                        {
+                            strSql = $"INSERT INTO [dbo].[OrderList](WareHouseId,ExpressId,Expressnum,Zm,ProductName,Num,Unitprice,Totalprice,State,Del, Userid,Safety,Worth,Stored) values({WareHouseId},{ExpressId},'{Expressnum}',{Zm},'{ProductName}',{Num},{Unitprice},{Totalprice},{State},{Del},{ Userid},{Safety},{Worth},{Stored})";
+                            LB.DataAccess.DB.InstanceJY.TextExecuteNonQuery(strSql);
+                        }
+                        else
+                        {
+                            //快递单号已存在，请更换
+                        }
+                    }
+
+                    
+                }
+            }
+
+            Log.Add("同步商品到集运", "Order", id.ToString(), CurrentAdmin, "");
+                Response.Write("{\"msg\":\"OK\"}");
         }
         /// <summary>
         /// 编辑快递单打印模板-FLASH

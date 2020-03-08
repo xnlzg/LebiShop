@@ -219,6 +219,11 @@
                         Response.Write("<button class=\"btn btn-default\" onclick=\"Export();\"><i class=\"ti-export\"></i> "+ Tag("导出") +"</button>");
                         }
                         %>
+                        <%
+                        if (type=="6"){
+                        Response.Write("<button class=\"btn btn-default\" onclick=\"syncJy();\"><i class=\"ti-rss\"></i> "+ Tag("同步集运") +"</button>");
+                        }
+                        %>
                         <%}%>
                     </div>
                     <div class="col-md-3 m-b-10">
@@ -580,6 +585,18 @@
             var postData = { "ids": ids };
             var url = "<%=site.AdminPath %>/ajax/ajax_order.aspx?__Action=Order_Del";
             RequestAjax(url, postData, function () { MsgBox(1, "<%=Tag("操作成功")%>", "?") });
+        }
+        function syncJy() {
+            $("#Modal-Confirm").modal("show");
+            $("#Confirm-Content").html("<%=Tag("确认要同步吗？")%>"); 
+            $("#Modal-Confirm .btn-success.btn-ok").attr("onclick", "syncObj();");
+        }
+          function syncObj() {
+            $("#Modal-Confirm").modal("hide");
+            var ids = GetChkCheckedValues("id");
+            var postData = { "ids": ids };
+            var url = "<%=site.AdminPath %>/ajax/ajax_order.aspx?__Action=Sync_jy";
+            RequestAjax(url, postData, function () { MsgBox(1, "<%=Tag("操作成功")%>", "?") }); 
         }
         function GetOrderMemo(id) {
             $.ajax({
